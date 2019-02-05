@@ -1,6 +1,6 @@
 ---
 
-
+filebeat_config_filename: CAM 
 filebeat_prospectors:
   - input_type: log
     paths:
