@@ -1,4 +1,13 @@
 ---
+
+- name: create /etc/filebeat/conf.d
+  file:
+    path: /etc/filebeat/conf.d
+    state: directory
+    mode: '0755'
+    owner: root
+    group: root
+
 - name: Copy Filebeat configuration.
   template:
     src: filebeat.yml.j2
@@ -6,6 +15,7 @@
     owner: root
     group: root
     mode: 0644
+    force: yes
   notify: restart filebeat
 
 
